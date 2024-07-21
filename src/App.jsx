@@ -1,11 +1,14 @@
 import React from "react";
+import Header from "./components/Header.jsx";
+// import MainSection from "./components/MainSection.jsx";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-5xl font-bold">Daniel</h1>
-    </div>
+    <>
+      <Header />
+      {/* <MainSection /> */}
+    </>
   );
 }
 

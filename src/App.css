@@ -1,0 +1,63 @@
+header {
+  @apply bg-no-repeat;
+  background-image: url(../images/bg-mobile-light.jpg);
+}
+
+@media (min-width: 768px) {
+  header {
+    @apply bg-no-repeat;
+    background-image: url(../images/bg-desktop-light.jpg);
+  }
+}
+
+.containerr {
+  @apply px-8 py-20 mx-auto max-w-680;
+}
+
+.logoAndIcon {
+  @apply flex justify-between items-center pb-8;
+}
+
+.logoAndIcon h1 {
+  @apply font-bold text-5xl text-white tracking-0.3 cursor-pointer;
+}
+
+.logoAndIcon img {
+  @apply cursor-pointer;
+}
+
+.newTodo {
+  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+}
+
+.newTodo button {
+  @apply border-2 p-0.65 rounded-full;
+}
+
+.newTodo input {
+  @apply text-18 outline-none capitalize;
+}
+
+.completeTodo {
+  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+}
+
+.completeTodo button {
+  @apply border-2 p-0.65 bg-CheckBackground rounded-full;
+}
+
+.completeTodo p {
+  @apply text-18 outline-none capitalize;
+}
+
+.notCompleteTodo {
+  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+}
+
+.notCompleteTodo button {
+  @apply border-2 p-0.65 rounded-full;
+}
+
+.notCompleteTodo p {
+  @apply text-18 outline-none capitalize;
+}
