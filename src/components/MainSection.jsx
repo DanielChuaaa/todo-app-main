@@ -1,25 +1,51 @@
-// import React from "react";
-// import iconCheck from "../../images/icon-check.svg";
+import React, { useState } from "react";
+import AddTodoList from "./AddTodolist";
+import ToggleInfo from "./ToggleInfo";
+import ToggleInfoMobile from "./ToggleInfoMobile";
 
-// function MainSection() {
-//   return (
-//     <>
-//       <section>
-//         <div className="containerr">
-//           <div className="completeTodo complete">
-//             <button>
-//               <img src={iconCheck} alt="iconCheck" />
-//             </button>
-//             <p>Complete online JavaScript course</p>
-//           </div>
-//           <div className="notCompleteTodo active">
-//             <button></button>
-//             <p>Jog around the park 3x</p>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
+function MainSection({
+  hardcodedTodos,
+  handleToggleComplete,
+  handleRemoveTodo,
+  getItemLeft,
+  setFilter,
+  getFilteredTodos,
+  clearCompletedTodos,
+  isDark,
+  darkModeToggle,
+}) {
+  const filteredTodos = getFilteredTodos();
+  return (
+    <section>
+      <div className="containerr">
+        <div className={`todolistWrapper ${isDark ? "lightModeTodo" : "darkModeTodo"}`}>
+          {filteredTodos.map((todo) => (
+            <AddTodoList
+              key={todo.id}
+              todo={todo}
+              onToggleComplete={() =>
+                handleToggleComplete(
+                  todo.id,
+                  hardcodedTodos.some((hardcodedTodos) => hardcodedTodos.id === todo.id)
+                )
+              }
+              onRemove={() =>
+                handleRemoveTodo(
+                  todo.id,
+                  hardcodedTodos.some((hardcodedTodos) => hardcodedTodos.id === todo.id)
+                )
+              }
+              isDark={isDark}
+            />
+          ))}
 
-// export default MainSection;
+          <ToggleInfo itemLeft={getItemLeft()} setFilter={setFilter} clearTodo={clearCompletedTodos} isDark={isDark} />
+        </div>
+
+        <ToggleInfoMobile itemLeft={getItemLeft()} setFilter={setFilter} clearTodo={clearCompletedTodos} isDark={isDark} />
+      </div>
+    </section>
+  );
+}
+
+export default MainSection;

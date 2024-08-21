@@ -22,19 +22,28 @@ export default {
         LightGrayishBlueHover: "hsl(236, 33%, 92%)",
         DarkGrayishBlue: "hsl(234, 11%, 52%)",
         VeryDarkGrayishBlue: "hsl(233, 14%, 35%)",
-        VeryDarkGrayishBlue: "hsl(237, 14%, 26%)",
       },
+
       backgroundImage: {
         CheckBackground: "linear-gradient(90deg, #57ddff, #c058f3)",
       },
       padding: {
-        0.65: "0.65rem",
+        4.5: "4.5rem",
+        0.65: "0.6rem",
+      },
+      margin: {
+        1.7: "1.7rem",
       },
       maxWidth: {
         680: "680px",
       },
       letterSpacing: {
         0.3: "0.3em",
+      },
+      screens: {
+        530: "530px",
+        425: "425px",
+        321: "321px",
       },
     },
   },

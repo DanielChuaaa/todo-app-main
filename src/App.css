@@ -1,17 +1,32 @@
-header {
-  @apply bg-no-repeat;
-  background-image: url(../images/bg-mobile-light.jpg);
+body {
+  @apply font-fp;
+  transition: background-color 0.3s ease-out, color 0.5s ease;
 }
 
-@media (min-width: 768px) {
-  header {
-    @apply bg-no-repeat;
-    background-image: url(../images/bg-desktop-light.jpg);
+.lightBg {
+  background: url(../images/bg-mobile-light.jpg) no-repeat;
+}
+
+@media (min-width: 375px) {
+  .lightBg {
+    background: url(../images/bg-desktop-light.jpg) top center no-repeat;
+    transition: background 0.5s ease-out;
+  }
+}
+
+.darkBg {
+  background: url(../images/bg-mobile-dark.jpg) no-repeat;
+}
+
+@media (min-width: 375px) {
+  .darkBg {
+    background: url(../images/bg-desktop-dark.jpg) left no-repeat;
+    transition: background 0.5s ease-out;
   }
 }
 
 .containerr {
-  @apply px-8 py-20 mx-auto max-w-680;
+  @apply 321:px-8 px-3 py-20 mx-auto max-w-680;
 }
 
 .logoAndIcon {
@@ -26,38 +41,170 @@ header {
   @apply cursor-pointer;
 }
 
-.newTodo {
-  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+.themeButton img {
+  transition: transform 0.5s ease;
 }
 
-.newTodo button {
-  @apply border-2 p-0.65 rounded-full;
+.themeButton img:hover {
+  transform: scale(1.2);
 }
 
-.newTodo input {
-  @apply text-18 outline-none capitalize;
+.newTodoWrapper {
+  @apply flex items-center w-full rounded-md;
 }
 
-.completeTodo {
-  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+.newTodoWrapper button {
+  @apply absolute border-2 p-0.65 rounded-full ml-1.7;
 }
 
-.completeTodo button {
-  @apply border-2 p-0.65 bg-CheckBackground rounded-full;
+.newButtonDark {
+  @apply border-VeryDarkGrayishBlue;
 }
 
-.completeTodo p {
-  @apply text-18 outline-none capitalize;
+.newTodoLight {
+  @apply flex items-center gap-5 pl-4.5 pr-6 py-4 w-full bg-white rounded-md;
+  transition: background-color 0.3s ease, color 1s ease;
+}
+
+.newTodoLight input {
+  @apply text-18 w-full outline-none capitalize;
+  transition: background-color 0.3s ease, color 1s ease;
+}
+
+.newTodoDark {
+  @apply flex items-center gap-5 pl-4.5 pr-6 py-4 w-full text-LightGrayishBlue bg-VeryDarkDesaturatedBlue rounded-md;
+  transition: background-color 0.3s ease, color 1s ease;
+}
+
+.newTodoDark input {
+  @apply text-18 w-full outline-none capitalize bg-VeryDarkDesaturatedBlue;
+  transition: background-color 0.3s ease, color 1s ease;
+}
+
+.todolistWrapper {
+  @apply -mt-32 bg-white rounded-md shadow-xl;
 }
 
 .notCompleteTodo {
-  @apply flex items-center gap-5 px-6 py-4 bg-white rounded-md;
+  @apply flex justify-between items-center gap-5 px-6 py-5;
 }
 
-.notCompleteTodo button {
-  @apply border-2 p-0.65 rounded-full;
+.notCompleteButton {
+  @apply border-2 p-3 rounded-full hover:border-BrightBlue transition ease-in-out delay-75;
+}
+
+.notCompleteButtonDark {
+  @apply border-VeryDarkGrayishBlue p-3 rounded-full;
 }
 
 .notCompleteTodo p {
   @apply text-18 outline-none capitalize;
+}
+
+.active {
+  @apply flex justify-between items-center gap-5 px-6 py-5  425:text-18 text-base text-DarkGrayishBlue line-through outline-none capitalize;
+}
+
+.activeDark {
+  @apply flex justify-between items-center gap-5 px-6 py-5 425:text-18 text-base text-LightGrayishBlue line-through outline-none capitalize;
+}
+
+.buttonTextWrapper {
+  @apply flex items-center gap-5;
+}
+
+.textLight {
+  @apply text-VeryDarkDesaturatedBlue;
+}
+
+.textDark {
+  @apply text-LightGrayishBlue;
+}
+
+.completeButton {
+  @apply p-2 bg-CheckBackground  rounded-full;
+}
+
+.notCompleteTodo:hover > .deleteButton {
+  @apply opacity-100  transition ease-in-out duration-150;
+}
+
+.deleteButton {
+  @apply opacity-0;
+}
+
+.getItem {
+  @apply flex justify-between px-6 py-4;
+}
+
+.getItemMobile {
+  @apply pt-4;
+}
+
+.toggleItem {
+  @apply 530:flex gap-3 hidden;
+}
+
+.toggleItemMobile {
+  @apply 530:hidden flex justify-center gap-3 px-6 py-4 border-hidden bg-white rounded-md shadow-xl;
+}
+
+.toggleItem button {
+  @apply hover:font-semibold hover:scale-105 transition ease-in-out duration-150;
+}
+
+.toggleItemActive {
+  @apply text-BrightBlue;
+}
+
+.clearButton {
+  @apply hover:font-semibold hover:scale-105 transition ease-in-out duration-150;
+}
+
+.itemDarkLeft {
+  @apply text-DarkGrayishBlue;
+}
+
+.itemDark {
+  @apply text-DarkGrayishBlue hover:text-LightGrayishBlue;
+}
+
+.itemLight {
+  @apply text-black;
+}
+
+/* Toggle */
+
+.lightModeBg {
+  @apply bg-VeryLightGray;
+}
+
+.darkModeBg {
+  @apply bg-VeryDarkBlue;
+}
+
+.lightModeTodo {
+  @apply divide-y bg-white;
+  transition: background-color 0.3s ease-out, color 1s ease;
+}
+
+.darkModeTodo {
+  @apply divide-y divide-VeryDarkGrayishBlue bg-VeryDarkDesaturatedBlue;
+  transition: background-color 0.3s ease-out, color 1s ease;
+}
+
+.lightModeTodoMobile {
+  @apply bg-white;
+}
+
+.darkModeTodoMobile {
+  @apply bg-VeryDarkDesaturatedBlue;
+}
+
+.completeTextDark {
+  @apply text-VeryDarkGrayishBlue;
+}
+
+.completeTextLight {
+  @apply text-LightGrayishBlue;
 }
